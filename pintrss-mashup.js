@@ -1,3 +1,5 @@
+// Inspired by @alexmahan: repo pintRSSt
+
 (function($){
     $.fn.extend({
         pintRSSt: function (options) {
