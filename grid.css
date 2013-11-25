@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+aside, footer, figure, header,
+section, img, object, embed {
+    display: block;
+}
+
+img, object, embed {
+    max-width: 100%;
+}
+
+body {
+    margin: auto;
+    font: 14px/16px monaco, monospace;
+    background: #fff;
+}
+
+
+
+
+/* ---------------------------------------- */
+ul#timeline {opacity: 0; transition: all .15s ease-in-out;-webkit-transition: all .15s ease-in-out;-moz-transition: all .15s ease-in-out;}
+ul#timeline.loaded {opacity: 1;}
+ul#timeline li {list-style: none;display: inline-block;}
+ul#timeline li a {display:block;}
+
+
+/*Pint Hovers*/
+
+ul#timeline li {position: relative;margin-bottom: -3px;}
+ul#timeline .cover {cursor:pointer;position: absolute; height: 100%; width:100%; top: 0; left: 0; right: 0; bottom: 0; transition: all .15s ease-in-out;-webkit-transition: all .15s ease-in-out;-moz-transition: all .15s ease-in-out;}
+ul#timeline .center-text {display: table;height: 100%;width: 100%;}
+ul#timeline .text {font-family: "futura-pt", Arial, verdana, sans-serif;font-size: 15px;letter-spacing: 0px;font-size: 16px;text-transform: none;letter-spacing: 1px;font-weight: 400;font-style: normal;line-height: 1.5em;margin: 0 auto;text-align: center;display: table-cell;vertical-align: middle;margin-top: 40%;margin-bottom: 40%;color:transparent;}
+    ul#timeline li:hover .cover{background:rgba(0, 0, 0, 0.8);text-align: center;}
+    ul#timeline li:hover .text{color:#fff;}
+
+.column {
+    float: left;
+}
+.size-1of2-small{
+    width: 49.999%;
+}
+.size-1of8 {
+    width: 12.499%;
+}
+.size-1of8-small {
+    width: 19.99%;
+}
+.size-1of4-small {
+    width: 24.99%;
+}
+
+[data-columns]::before {
+    display: none;
+}
+
+@media screen and (max-width: 450px) {
+    #timeline[data-columns]::before {
+        content: '2 .column.size-1of2-small';
+    }
+}
+
+@media screen and (min-width: 451px) and (max-width: 700px) {
+    #timeline[data-columns]::before {
+        content: '4 .column.size-1of4-small';
+    }
+}
+
+@media screen and (min-width: 701px) and (max-width: 850px) {
+    #timeline[data-columns]::before {
+        content: '8 .column.size-1of8-small';
+    }
+}
+
+@media screen and (min-width: 851px) {
+    #timeline[data-columns]::before {
+        content: '8 .column.size-1of8';
+    }
+}
+
